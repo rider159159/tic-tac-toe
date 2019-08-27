@@ -1,0 +1,524 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//all seting
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    background-color: #000;
+
+    .hide {
+        display: none;
+    }
+}
+
+@mixin border-style {
+    border: #000 4px solid;
+    @content
+}
+
+@mixin pad {
+    @media(max-width: 768px) {
+        @content
+    }
+}
+
+@mixin phone {
+    @media(max-width: 414px) {
+        @content
+    }
+}
+
+.circle {
+    border: #000 4px solid;
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+}
+
+.cross {
+    height: 45%;
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        height: 100%;
+        content: '';
+        width: 5px;
+        background-color: #fff;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+//start Content
+.start {
+    width: 540px;
+
+    @include pad {
+        width: 95vw;
+    }
+
+    .startMark {
+        height: 540px;
+        width: 540px;
+
+        @include pad {
+            width: 95vw;
+            height: 95vw;
+        }
+
+        .col-4 {
+            padding: 0;
+            height: 33.333%;
+            width: 33.333%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .start-text {
+            font-size: 100px;
+            font-style: italic;
+            color: #fff;
+
+            @include pad {
+                font-size: 17vw
+            }
+        }
+
+        .circle {
+            width: 70%;
+            height: 70%;
+            border: solid 14px #ED494C;
+        }
+
+        .start-cross {
+            font-size: 200px;
+            color: #ED494C;
+            ;
+        }
+
+        .space-cross {
+            font-size: 200px;
+            -webkit-text-fill-color: transparent;
+            color: white;
+            -webkit-text-stroke: 1px #fff;
+        }
+
+        .space-circle {
+            border: solid 4px #ED494C;
+            position: relative;
+
+            &:after {
+                border-radius: 50%;
+                border: solid 4px #ED494C;
+                width: 70%;
+                height: 70%;
+                content: "";
+                position: absolute;
+                left: 16%;
+                top: 16%;
+            }
+        }
+    }
+
+    .startBtn {
+        background-color: #fff;
+        color: #FF6D70;
+        font-size: 48px;
+    }
+}
+
+//play Content
+.play {
+    width: 540px;
+
+    @include pad {
+        width: 95vw;
+    }
+}
+
+.score {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+
+    .x-mark,
+    .o-mark {
+        height: 64px;
+        width: 12%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include border-style() {}
+
+        @include phone {
+            width: 17%;
+        }
+    }
+
+    .x-mark {
+        border-radius: 8px 0 0 8px;
+
+        .cross {
+            width: 70%;
+            height: 70%;
+        }
+    }
+
+    .o-mark {
+        border-radius: 0 8px 8px 0;
+
+        background-color: rgb(237, 73, 76);
+
+        .circle {
+            border: #fff 4px solid;
+            height: 70%;
+            width: 70%;
+        }
+    }
+
+    .x-score,
+    .o-score {
+        width: 30%;
+        background: #fff;
+        color: black;
+        font-size: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        border-top: 4px black solid;
+        border-bottom: 4px black solid;
+
+        @include phone {
+            width: 25%;
+        }
+    }
+
+    .vs {
+        width: 15%;
+        font-size: 20px;
+        background-color: #000;
+        height: 71px;
+        position: relative;
+        top: -7px;
+        border-radius: 8px 8px 0 0;
+        padding-top: 25px;
+    }
+}
+
+.o-turn,
+.x-turn {
+    color: #fff;
+}
+
+.game {
+    height: 540px;
+    width: 540px;
+    position: relative;
+
+    @include pad {
+        width: 95vw;
+        height: 95vw;
+    }
+
+    .col-4 {
+        padding: 0;
+        height: 33.333%;
+        width: 33.333%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .x-line {
+        background-color: #ED494C;
+        border-radius: 4px;
+        width: 100%;
+        height: 8px;
+    }
+
+    .y-line {
+        background-color: #ED494C;
+        border-radius: 4px;
+        width: 8px;
+        height: 100%;
+        position: absolute;
+    }
+
+    .y-line:nth-child(1) {
+        left: 33.33333%;
+    }
+
+    .y-line:nth-child(2) {
+        left: 66.66666%;
+    }
+}
+
+.x-win,
+.o-win,
+.draw {
+    height: 540px;
+    width: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include pad {
+        width: 95vw;
+        height: 95vw;
+    }
+
+    .winner {
+        position: absolute;
+        font-size: 154px;
+        font-style: italic;
+        color: #FF6D70;
+        -webkit-text-stroke: 4px white;
+        font-weight: normal;
+        z-index: 10;
+
+        @include pad {
+            font-size: 27vw;
+        }
+    }
+}
+
+.x-win {
+    .cross {
+        height: 85%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        &:before,
+        &:after {
+            background-color: #ED494C;
+            width: 50px;
+        }
+    }
+
+
+}
+
+.o-win {
+    .circle {
+        border: #ED494C 50px solid;
+        width: 85%;
+        height: 85%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+
+.draw {
+    .cross {
+        height: 45%;
+
+        @include phone {
+            left: 10%;
+        }
+
+        &:before,
+        &:after {
+            background-color: #ED494C;
+            width: 20px;
+            left: -150px;
+        }
+
+    }
+
+    .circle {
+        border: #ED494C 24px solid;
+        width: 45%;
+        height: 45%;
+        position: absolute;
+        left: 280px;
+
+        @include pad {
+            left: 50%;
+        }
+
+        @include phone {
+            left: 50%;
+        }
+    }
+
+    .drawText {
+        position: absolute;
+        font-size: 154px;
+        font-style: italic;
+        color: #FF6D70;
+        -webkit-text-stroke: 4px white;
+        font-weight: normal;
+        z-index: 10;
+
+        @include pad {
+            font-size: 32vw;
+        }
+
+        @include phone {
+            font-size: 27vw;
+        }
+    }
+}
+
+.restartBtn {
+    background: #ED494C;
+    color: #fff;
+    font-size: 48px;
+}

@@ -1,0 +1,568 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  background-color: #000;
+}
+
+body .hide {
+  display: none;
+}
+
+.circle {
+  border: #000 4px solid;
+  width: 45%;
+  height: 45%;
+  border-radius: 50%;
+}
+
+.cross {
+  height: 45%;
+  position: relative;
+}
+
+.cross:before, .cross:after {
+  position: absolute;
+  height: 100%;
+  content: '';
+  width: 5px;
+  background-color: #fff;
+}
+
+.cross::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cross:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.start {
+  width: 540px;
+}
+
+@media (max-width: 768px) {
+  .start {
+    width: 95vw;
+  }
+}
+
+.start .startMark {
+  height: 540px;
+  width: 540px;
+}
+
+@media (max-width: 768px) {
+  .start .startMark {
+    width: 95vw;
+    height: 95vw;
+  }
+}
+
+.start .startMark .col-4 {
+  padding: 0;
+  height: 33.333%;
+  width: 33.333%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.start .startMark .start-text {
+  font-size: 100px;
+  font-style: italic;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .start .startMark .start-text {
+    font-size: 17vw;
+  }
+}
+
+.start .startMark .circle {
+  width: 70%;
+  height: 70%;
+  border: solid 14px #ED494C;
+}
+
+.start .startMark .start-cross {
+  font-size: 200px;
+  color: #ED494C;
+}
+
+.start .startMark .space-cross {
+  font-size: 200px;
+  -webkit-text-fill-color: transparent;
+  color: white;
+  -webkit-text-stroke: 1px #fff;
+}
+
+.start .startMark .space-circle {
+  border: solid 4px #ED494C;
+  position: relative;
+}
+
+.start .startMark .space-circle:after {
+  border-radius: 50%;
+  border: solid 4px #ED494C;
+  width: 70%;
+  height: 70%;
+  content: "";
+  position: absolute;
+  left: 16%;
+  top: 16%;
+}
+
+.start .startBtn {
+  background-color: #fff;
+  color: #FF6D70;
+  font-size: 48px;
+}
+
+.play {
+  width: 540px;
+}
+
+@media (max-width: 768px) {
+  .play {
+    width: 95vw;
+  }
+}
+
+.score {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+}
+
+.score .x-mark,
+.score .o-mark {
+  height: 64px;
+  width: 12%;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: #000 4px solid;
+}
+
+@media (max-width: 414px) {
+  .score .x-mark,
+  .score .o-mark {
+    width: 17%;
+  }
+}
+
+.score .x-mark {
+  border-radius: 8px 0 0 8px;
+}
+
+.score .x-mark .cross {
+  width: 70%;
+  height: 70%;
+}
+
+.score .o-mark {
+  border-radius: 0 8px 8px 0;
+  background-color: #ed494c;
+}
+
+.score .o-mark .circle {
+  border: #fff 4px solid;
+  height: 70%;
+  width: 70%;
+}
+
+.score .x-score,
+.score .o-score {
+  width: 30%;
+  background: #fff;
+  color: black;
+  font-size: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 64px;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+}
+
+@media (max-width: 414px) {
+  .score .x-score,
+  .score .o-score {
+    width: 25%;
+  }
+}
+
+.score .vs {
+  width: 15%;
+  font-size: 20px;
+  background-color: #000;
+  height: 71px;
+  position: relative;
+  top: -7px;
+  border-radius: 8px 8px 0 0;
+  padding-top: 25px;
+}
+
+.o-turn,
+.x-turn {
+  color: #fff;
+}
+
+.game {
+  height: 540px;
+  width: 540px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .game {
+    width: 95vw;
+    height: 95vw;
+  }
+}
+
+.game .col-4 {
+  padding: 0;
+  height: 33.333%;
+  width: 33.333%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game .x-line {
+  background-color: #ED494C;
+  border-radius: 4px;
+  width: 100%;
+  height: 8px;
+}
+
+.game .y-line {
+  background-color: #ED494C;
+  border-radius: 4px;
+  width: 8px;
+  height: 100%;
+  position: absolute;
+}
+
+.game .y-line:nth-child(1) {
+  left: 33.33333%;
+}
+
+.game .y-line:nth-child(2) {
+  left: 66.66666%;
+}
+
+.x-win,
+.o-win,
+.draw {
+  height: 540px;
+  width: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .x-win,
+  .o-win,
+  .draw {
+    width: 95vw;
+    height: 95vw;
+  }
+}
+
+.x-win .winner,
+.o-win .winner,
+.draw .winner {
+  position: absolute;
+  font-size: 154px;
+  font-style: italic;
+  color: #FF6D70;
+  -webkit-text-stroke: 4px white;
+  font-weight: normal;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .x-win .winner,
+  .o-win .winner,
+  .draw .winner {
+    font-size: 27vw;
+  }
+}
+
+.x-win .cross {
+  height: 85%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.x-win .cross:before, .x-win .cross:after {
+  background-color: #ED494C;
+  width: 50px;
+}
+
+.o-win .circle {
+  border: #ED494C 50px solid;
+  width: 85%;
+  height: 85%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.draw .cross {
+  height: 45%;
+}
+
+@media (max-width: 414px) {
+  .draw .cross {
+    left: 10%;
+  }
+}
+
+.draw .cross:before, .draw .cross:after {
+  background-color: #ED494C;
+  width: 20px;
+  left: -150px;
+}
+
+.draw .circle {
+  border: #ED494C 24px solid;
+  width: 45%;
+  height: 45%;
+  position: absolute;
+  left: 280px;
+}
+
+@media (max-width: 768px) {
+  .draw .circle {
+    left: 50%;
+  }
+}
+
+@media (max-width: 414px) {
+  .draw .circle {
+    left: 50%;
+  }
+}
+
+.draw .drawText {
+  position: absolute;
+  font-size: 154px;
+  font-style: italic;
+  color: #FF6D70;
+  -webkit-text-stroke: 4px white;
+  font-weight: normal;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .draw .drawText {
+    font-size: 32vw;
+  }
+}
+
+@media (max-width: 414px) {
+  .draw .drawText {
+    font-size: 27vw;
+  }
+}
+
+.restartBtn {
+  background: #ED494C;
+  color: #fff;
+  font-size: 48px;
+}
+/*# sourceMappingURL=all.css.map */

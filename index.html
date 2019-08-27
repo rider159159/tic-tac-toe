@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIC-TAC-TOE</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.js"
+        integrity="sha256-pVreZ67fRaATygHF6T+gQtF1NI700W9kzeAivu6au9U=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700,700i&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="all.css">
+
+<body class="d-flex justify-content-center align-items-center fac">
+    <div class="start">
+        <div class="startMark row mt-4">
+            <div class="col-4 start-text">TIC</div>
+            <div class="col-4">
+                <div class="circle"></div>
+            </div>
+            <div class="col-4 space-cross">×</div>
+            <div class="col-4 start-cross">×</div>
+            <div class="col-4 start-text">TAC</div>
+            <div class="col-4">
+                <div class="circle space-circle"></div>
+            </div>
+            <div class="col-4">
+                <div class="circle space-circle"></div>
+            </div>
+            <div class="col-4 start-cross">×</div>
+            <div class="col-4 start-text">TOE</div>
+        </div>
+        <div class="row my-3">
+            <button type="button" class="startBtn btn btn-lg py-0 btn-block">START</button>
+        </div>
+    </div>
+    <div class="play hide">
+        <div class="row mx-auto">
+            <div class=" score row mx-auto mt-3">
+                <div class="x-mark">
+                    <div class="cross"></div>
+                </div>
+                <div class="x-score"></div>
+                <div class="vs">VS</div>
+                <div class="o-score"></div>
+                <div class="o-mark">
+                    <div class="circle "></div>
+                </div>
+            </div>
+            <div class="row  justify-content-between w-100 mx-auto mb-3">
+                <div class="x-turn" style="visibility: hidden">YOUR TURN!</div>
+                <div class="o-turn" style="visibility: visible">
+                    YOUR TURN!
+                </div>
+            </div>
+
+        </div>
+        <div class="game row mx-auto">
+            <div class="y-line"></div>
+            <div class="y-line"></div>
+            <div class="col-4 ox" id="open" data-box="1"></div>
+            <div class="col-4 ox" id="open" data-box="2"></div>
+            <div class="col-4 ox" id="open" data-box="3"></div>
+            <div class="x-line"></div>
+            <div class="col-4 ox" id="open" data-box="4"></div>
+            <div class="col-4 ox" id="open" data-box="5"></div>
+            <div class="col-4 ox" id="open" data-box="6"></div>
+            <div class="x-line"></div>
+            <div class="col-4 ox" id="open" data-box="7"></div>
+            <div class="col-4 ox" id="open" data-box="8"></div>
+            <div class="col-4 ox" id="open" data-box="9"></div>
+        </div>
+        <div class="o-win row mb-4 mx-auto hide ">
+            <div class="circle">
+                <div class="winner">WINNER!</div>
+            </div>
+        </div>
+        <div class="x-win row mb-4 mx-auto hide">
+            <div class="cross">
+                <div class="winner">WINNER!</div>
+            </div>
+        </div>
+
+        <div class="draw row mb-4 mx-auto hide">
+            <div class="cross"></div>
+            <div class="circle"></div>
+            <div class="drawText">DRAW!<br>DRAW!<br>DRAW!</div>
+        </div>
+        <div class="row my-3">
+            <button type="button" class="restartBtn btn btn-lg py-0 btn-block">RESTART</button>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="all.js"></script>
+</body>
+
+</html>
